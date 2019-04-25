@@ -1,0 +1,5 @@
+lib
+vendor
+.serverless
+.env
+layer

@@ -1,0 +1,39 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      # the Docker image with Cypress dependencies
+      - image: circleci/node:8.15
+        environment:
+          ## this enables colors in the output
+          TERM: xterm
+    working_directory: ~/app
+    steps:
+      - checkout
+      - run:
+          name: downloadpb
+          command: make downloadpb
+      - run:
+          name: Install deps
+          command: yarn install
+      - run:
+          name: packagewithpg
+          command: make packagewithpg
+      - run:
+          name: package
+          command: make package
+      - run:
+          name: buildpglayer
+          command: make buildpglayer
+      - run:
+          name: create_domain
+          command: yarn run create-domain   
+      - run:
+          name: deploy
+          command: yarn run deploy
+
+workflows:
+  build-test:
+    jobs:
+      - test

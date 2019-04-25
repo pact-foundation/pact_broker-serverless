@@ -1,0 +1,24 @@
+{
+  "name": "pact_broker-serverless",
+  "version": "1.0.0",
+  "description": "Running the pact_broker application on AWS Lambda. It is tested with Ruby 2.5.x and bundler-1.17.x.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-domain": "sls create_domain",
+    "deploy": "sls deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/you54f/pact_broker-serverless.git"
+  },
+  "author": "Yousaf Nabi",
+  "license": "ISC",
+  "homepage": "https://github.com/you54f/pact_broker-serverless#readme",
+  "devDependencies": {
+    "serverless": "^1.41.0",
+    "serverless-domain-manager": "^3.2.1",
+    "serverless-ignore": "^0.1.5",
+    "serverless-rack": "YOU54F/serverless-rack#configbase"
+  }
+}

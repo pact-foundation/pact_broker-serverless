@@ -1,0 +1,10 @@
+.ruby-gemset
+.ruby-version
+node_modules
+.git
+.serverless
+vendor/bundle
+.DS_Store
+.bundle/config
+.env
+lib/

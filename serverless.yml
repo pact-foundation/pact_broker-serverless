@@ -1,0 +1,57 @@
+service: pact-broker-serverless
+
+provider:
+  name: aws
+  runtime: ruby2.5
+  profile: ${env:AWS_PROFILE_NAME}
+  region: ${env:AWS_REGION}
+  environment:
+    # API_GATEWAY_BASE_PATH: ${self:custom.customDomain.basePath}
+    PACT_BROKER_DATABASE_USERNAME: ${env:PACT_BROKER_DATABASE_USERNAME}
+    PACT_BROKER_DATABASE_PASSWORD: ${env:PACT_BROKER_DATABASE_PASSWORD}
+    PACT_BROKER_DATABASE_HOST: ${env:PACT_BROKER_DATABASE_HOST}
+    PACT_BROKER_DATABASE_NAME: ${env:PACT_BROKER_DATABASE_NAME}
+    PACT_BROKER_LOG_LEVEL: ${env:PACT_BROKER_LOG_LEVEL}
+    PACT_BROKER_BASE_URL: ${env:PACT_BROKER_BASE_URL}
+    PACT_BROKER_BASIC_AUTH_USERNAME: 
+PACT_BROKER_BASIC_AUTH_PASSWORD=
+PACT_BROKER_BASIC_AUTH_READ_ONLY_USERNAME=
+PACT_BROKER_BASIC_AUTH_READ_ONLY_PASSWORD=
+    RACK_CONFIG_BASE: 'pact_broker/config.ru'
+
+plugins:
+  - serverless-rack
+  - serverless-ignore
+  - serverless-domain-manager
+
+functions:
+  api:
+    timeout: 30
+    handler: rack_adapter.handler
+    layers:
+      - ${env:PG_RUBY_LAYER_ARN}
+    events:
+      - http: ANY /
+      - http: ANY {proxy+} 
+
+custom:
+  ignore: true
+  rack:
+    enableBundler: false
+    textMimeTypes:
+      - application/hal+json
+      - application/hal+json;charset=utf-8
+      - application/font-woff;
+      - application/xhtml+xml;
+      - application/signed-exchange;
+      - image/vnd.microsoft.icon;
+      - application/octet-stream;
+      - text/html;charset=utf-8
+      - image/webp
+      - image/apng
+  customDomain:
+    # basePath: pactbroker
+    domainName: ${env:SERVERLESS_DOMAIN_NAME}
+    certificateName: ${env:SERVERLESS_CERTIFICATE_NAME}
+    stage: dev
+    createRoute53Record: true

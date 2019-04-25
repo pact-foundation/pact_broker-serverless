@@ -1,0 +1,12 @@
+service: ruby-pg-layers
+provider:
+  name: aws
+  profile: ${env:AWS_PROFILE_NAME}
+  region: ${env:AWS_REGION}
+  
+layers:
+  pgRuby25:
+    path: layer
+    description: A Layer to fix postgres support in Ruby 2.5 Lambda functions
+    compatibleRuntimes:
+      - ruby2.5
