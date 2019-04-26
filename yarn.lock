@@ -1950,12 +1950,12 @@ semver@^5.0.3, semver@^5.1.0, semver@^5.7.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.0.tgz#790a7cf6fea5459bac96110b29b60412dc8ff96b"
   integrity sha512-Ya52jSX2u7QKghxeoFGpLwCtGlt7j0oY9DYb5apt9nPlJ42ID+ulTXESnt/qAQcoSERyZ5sl3LDIOw0nAn/5DA==
 
-serverless-apigw-binary@^0.4.4:
+serverless-apigw-binary@0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/serverless-apigw-binary/-/serverless-apigw-binary-0.4.4.tgz#f3cffd8365322a2a1d8bde5fd94b306b7a64d4fb"
   integrity sha512-2DJmQTzeXa/+8u9ekReqf7j4gQjBtzQE4MK9nlOnEz4F7MVWCQXYlLPmf2TXSoxxJZzlWvIiNzCTq6vAT9F5FQ==
 
-serverless-domain-manager@^3.2.1:
+serverless-domain-manager@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-3.2.1.tgz#bc847d3f0f25f2957f457873bf5ddc6c56494c9d"
   integrity sha512-vn/MLRoUDjAlqxDBCgtzqYBfE8ykxyLj3Mjpy18sfkprgfE8TXIwpzz6Pnxl6IEqjyewnhCC/IA2Z8IVLypYZQ==
@@ -1965,7 +1965,7 @@ serverless-domain-manager@^3.2.1:
     aws-sdk "^2.177.0"
     chalk "^2.4.1"
 
-serverless-ignore@^0.1.5:
+serverless-ignore@0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/serverless-ignore/-/serverless-ignore-0.1.5.tgz#e4e0d1c8ddf50b9f8e0205133968bf9bf3c069ec"
   integrity sha512-/e62rTw2PxwZaO87rY1kIwCufE0Tm4ojk3qOP42vg82Qma194Djm6KiQoe/nOhtuyv3J/SeAwna5WuXbLKPY7w==
@@ -1982,7 +1982,7 @@ serverless-rack@YOU54F/serverless-rack#configbase:
     lodash "^4.17.11"
     string-argv "^0.1.2"
 
-serverless@^1.41.0:
+serverless@1.41.1:
   version "1.41.1"
   resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.41.1.tgz#c8278058eaa3a3c154b3a21fcc6536c165377a02"
   integrity sha512-mVB8TSOWmLPvG07twtqPTZ9OToNDATZPY+6XIr63/kjbC9mU+ghrhVudLJRRjew0YewPZh+g1KXy5OyfnWZ5Rg==
