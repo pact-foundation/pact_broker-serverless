@@ -13,16 +13,17 @@ provider:
     PACT_BROKER_DATABASE_NAME: ${env:PACT_BROKER_DATABASE_NAME}
     PACT_BROKER_LOG_LEVEL: ${env:PACT_BROKER_LOG_LEVEL}
     PACT_BROKER_BASE_URL: ${env:PACT_BROKER_BASE_URL}
-    PACT_BROKER_BASIC_AUTH_USERNAME: 
-PACT_BROKER_BASIC_AUTH_PASSWORD=
-PACT_BROKER_BASIC_AUTH_READ_ONLY_USERNAME=
-PACT_BROKER_BASIC_AUTH_READ_ONLY_PASSWORD=
+    PACT_BROKER_BASIC_AUTH_USERNAME: ${env:PACT_BROKER_BASIC_AUTH_USERNAME}
+    PACT_BROKER_BASIC_AUTH_PASSWORD: ${env:PACT_BROKER_BASIC_AUTH_PASSWORD}
+    PACT_BROKER_BASIC_AUTH_READ_ONLY_USERNAME: ${env:PACT_BROKER_BASIC_AUTH_READ_ONLY_USERNAME}
+    PACT_BROKER_BASIC_AUTH_READ_ONLY_PASSWORD: ${env:PACT_BROKER_BASIC_AUTH_READ_ONLY_PASSWORD}
     RACK_CONFIG_BASE: 'pact_broker/config.ru'
 
 plugins:
   - serverless-rack
   - serverless-ignore
   - serverless-domain-manager
+  - serverless-apigw-binary
 
 functions:
   api:
@@ -49,6 +50,15 @@ custom:
       - text/html;charset=utf-8
       - image/webp
       - image/apng
+  apigwBinary:
+    types:           #list of mime-types
+      - 'image/webp'
+      - 'image/apng'
+      - 'image/jpeg'
+      - 'text/html'
+      - 'application/json'
+      - 'application/hal+json'
+      - 'application/xhtml+xml'
   customDomain:
     # basePath: pactbroker
     domainName: ${env:SERVERLESS_DOMAIN_NAME}
