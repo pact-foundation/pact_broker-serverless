@@ -4,7 +4,7 @@ jobs:
   test:
     docker:
       # the Docker image with Cypress dependencies
-      - image: circleci/node:8.15
+      - image: circleci/node:8.16
         environment:
           ## this enables colors in the output
           TERM: xterm
