@@ -1,39 +1,75 @@
 version: 2.1
 
+defaults: &defaults
+  machine:
+      docker_layer_caching: true
+  environment:
+    TERM: xterm
+
 jobs:
-  test:
-    docker:
-      # the Docker image with Cypress dependencies
-      - image: circleci/node:8.15
-        environment:
-          ## this enables colors in the output
-          TERM: xterm
-    working_directory: ~/app
+  build_layer:
+    <<: *defaults      
     steps:
-      - checkout
-      - run:
-          name: downloadpb
-          command: make downloadpb
-      - run:
-          name: Install deps
-          command: yarn install
-      - run:
-          name: packagewithpg
-          command: make packagewithpg
-      - run:
-          name: package
-          command: make package
-      - run:
-          name: buildpglayer
-          command: make buildpglayer
-      - run:
-          name: create_domain
-          command: yarn run create-domain   
-      - run:
-          name: deploy
-          command: yarn run deploy
+    - checkout
+    - run:
+        name: downloadpb
+        command: make downloadpb
+    - run:
+        name: package
+        command: make packagewithpg
+    - persist_to_workspace:
+        root: ~/
+        paths:
+          - project
+
+  deploy_layer:
+    docker:
+    - image: circleci/node:8.15
+    environment:
+      TERM: xterm
+    steps: 
+    - attach_workspace:
+        at: ~/  
+    - run:
+        name: npm i
+        command: |
+            sudo npm i -g serverless
+            npm install
+    - run:
+        name: deploy
+        command: yarn run deploy
+    - persist_to_workspace:
+        root: ~/
+        paths:
+          - project
+              
+  create_domain:
+    docker:
+    - image: circleci/node:8.15
+    environment:
+      TERM: xterm
+    steps: 
+    - attach_workspace:
+        at: ~/  
+    - run:
+        name: npm i
+        command: |
+            sudo npm i -g serverless
+            npm install
+    - run:
+        name: create_domain
+        command: yarn run create-domain 
+    - persist_to_workspace:
+        root: ~/
+        paths:
+          - project
+              
 
 workflows:
-  build-test:
+  version: 2
+  build:
     jobs:
-      - test
+      - build_layer
+      - deploy_layer:
+          requires:
+            - build_layer
