@@ -73,3 +73,6 @@ workflows:
       - deploy_layer:
           requires:
             - build_layer
+          filters:
+            branches:
+              only: master
