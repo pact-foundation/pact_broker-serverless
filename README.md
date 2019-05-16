@@ -45,15 +45,10 @@ plugins:
 
 ## Running with Serverless
 
-1. Run `make downloadpb` which will download the latest version of the `pact_broker` folder in `dius/pact_broker-docker` _note_ this command will remove the old folder without futher warning.
-2. Open `pact_broker/Gemfile` and comment out Passenger, mysql2 and sqlite, as we don't need them
-   1. Passenger - We are using Rack here
-   2. MySql2 - This may work, but doubles the size of the deployment package, so if its needed, we can create a mysql layer.
-   3. Sqlite - Same reason as above, I am only using PostGres in my examples so I want as small a function as possible.
-3. Run `make packagewithpg` to build the pact broker bundle dependencies and postgres dependencies in a docker container, and copy them to your `vendor` and `lib` folders.
+1. Run `make downloadpb` which will download the latest version of the `pact_broker` folder from `pact-foundation/pact-broker-docker` _note_ this command will remove the old folder without futher warning.
+2. Run `make packagewithpg` to build the pact broker bundle dependencies and postgres dependencies in a docker container, and copy them to your `vendor` and `lib` folders.
    Alternatively you can run `make package` to build the pact broker bundle dependencies. You will need a custom aws layer with the postgres dependencies satisfied to run your function successfully. See the next section
-4. Run `yarn install` or delete the `.lock` file and run `npm install` if you prefer. This will install serverless, along with serverless-rack, serverless-ignore & serverless-domain-manager.
-5. edit `pact_broker/config.ru` and add `config.log_dir = "/tmp/log"` to the following method, in order to output our logs to disk space, that the lambda function has write permissions to.
+3. Run `yarn install` or delete the `.lock` file and run `npm install` if you prefer. This will install serverless, along with serverless-rack, serverless-ignore & serverless-domain-manager.
 
   ```ruby
     app = PactBroker::App.new do | config |
@@ -63,8 +58,6 @@ plugins:
   ```
 
 5. Run `make deploy` to deploy your function, and you will receive a URL at the end if everything went OK.
-
-_note_ out of the box, serverless rack does not let us configure the base folder path to `config.ru`, I currently have a fork and will propose a PR to allow this setting, via a custom var. For now, the fork will take the env argument `RACK_CONFIG_BASE` which is set to `pact_broker/config.ru` in our `serverless.yml`. If it is not set, it will revert to serverless-racks default of `config.ru`.
 
 6. Run `make logs` to access the aws lambda logs from cloudwatch, you will need to curl your endpoint or load it in the browser to initiate a request after deployment (and see anything useful in the logs)
    

@@ -1972,9 +1972,10 @@ serverless-ignore@0.1.5:
   dependencies:
     ignore "^3.3.8"
 
-serverless-rack@YOU54F/serverless-rack#configbase:
-  version "1.0.1"
-  resolved "https://codeload.github.com/YOU54F/serverless-rack/tar.gz/74978492d0160d1989157b1feca333dac4307e7e"
+serverless-rack@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/serverless-rack/-/serverless-rack-1.0.2.tgz#14c51e4a1fad8169fbfa07317d9bef6342293bf0"
+  integrity sha512-8hRiScN8Srv2uTmNuv0rIwto616+FN5M+sjA9yy07JuEh2u86qVnsjZOJocKfRVF6ehkMxirV+/7T1LJh0psqg==
   dependencies:
     bluebird "^3.5.3"
     empty-dir "^2.0.0"
@@ -1982,10 +1983,10 @@ serverless-rack@YOU54F/serverless-rack#configbase:
     lodash "^4.17.11"
     string-argv "^0.1.2"
 
-serverless@^1.41.0:
-  version "1.42.0"
-  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.42.0.tgz#d02445e14643c3fcff887cd2512f47e6241b257d"
-  integrity sha512-a0e326qdGQo0FftZ/mnjGuvsYS1sa52Qay4R2uvr1Ooq2iFfScM7/soRrffp/kGpfmBe0bfyhaQJtoyCvurGiQ==
+serverless@1.41.1:
+  version "1.41.1"
+  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.41.1.tgz#c8278058eaa3a3c154b3a21fcc6536c165377a02"
+  integrity sha512-mVB8TSOWmLPvG07twtqPTZ9OToNDATZPY+6XIr63/kjbC9mU+ghrhVudLJRRjew0YewPZh+g1KXy5OyfnWZ5Rg==
   dependencies:
     archiver "^1.1.0"
     async "^1.5.2"
