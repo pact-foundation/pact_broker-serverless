@@ -3,7 +3,6 @@ service: pact-broker-serverless
 provider:
   name: aws
   runtime: ruby2.5
-  profile: ${env:AWS_PROFILE_NAME}
   region: ${env:AWS_REGION}
   environment:
     # API_GATEWAY_BASE_PATH: ${self:custom.customDomain.basePath}
@@ -13,11 +12,11 @@ provider:
     PACT_BROKER_DATABASE_NAME: ${env:PACT_BROKER_DATABASE_NAME}
     PACT_BROKER_LOG_LEVEL: ${env:PACT_BROKER_LOG_LEVEL}
     PACT_BROKER_BASE_URL: ${env:PACT_BROKER_BASE_URL}
+    RACK_ENV: production
     # PACT_BROKER_BASIC_AUTH_USERNAME: ${env:PACT_BROKER_BASIC_AUTH_USERNAME}
     # PACT_BROKER_BASIC_AUTH_PASSWORD: ${env:PACT_BROKER_BASIC_AUTH_PASSWORD}
     # PACT_BROKER_BASIC_AUTH_READ_ONLY_USERNAME: ${env:PACT_BROKER_BASIC_AUTH_READ_ONLY_USERNAME}
     # PACT_BROKER_BASIC_AUTH_READ_ONLY_PASSWORD: ${env:PACT_BROKER_BASIC_AUTH_READ_ONLY_PASSWORD}
-    RACK_CONFIG_BASE: 'pact_broker/config.ru'
 
 plugins:
   - serverless-rack
@@ -38,6 +37,7 @@ functions:
 custom:
   ignore: true
   rack:
+    configPath: pact_broker/config.ru
     enableBundler: false
     textMimeTypes:
       - application/hal+json
