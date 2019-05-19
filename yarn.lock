@@ -2,23 +2,6 @@
 # yarn lockfile v1
 
 
-"@types/chai-spies@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@types/chai-spies/-/chai-spies-1.0.0.tgz#1442daa924d2a8c3f20253db5e5e8fdd1fd4f229"
-  integrity sha512-Bj/froHomMnlAPEYEeqhmSuNSjTWW/VuSvCVdhLdcb67+dy4ffjTR6fC0YYw9tHP6KR3U8fkF1mgzmzlChHc5Q==
-  dependencies:
-    "@types/chai" "*"
-
-"@types/chai@*":
-  version "4.1.7"
-  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.1.7.tgz#1b8e33b61a8c09cbe1f85133071baa0dbf9fa71a"
-  integrity sha512-2Y8uPt0/jwjhQ6EiluT0XCri1Dbplr0ZxfFXUz+ye13gaqE8u5gL5ppao1JrUYr9cIip5S6MvQzBS7Kke7U9VA==
-
-"@types/node@^11.11.3":
-  version "11.13.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.10.tgz#4df59e5966b56f512bac98898bcbee5067411f0f"
-  integrity sha512-leUNzbFTMX94TWaIKz8N15Chu55F9QSH+INKayQr5xpkasBQBRF3qQXfo3/dOnMU/dEIit+Y/SU8HyOjq++GwA==
-
 agent-base@^4.1.0:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.2.1.tgz#d89e5999f797875674c07d87f260fc41e83e8ca9"
@@ -1955,13 +1938,11 @@ serverless-apigw-binary@0.4.4:
   resolved "https://registry.yarnpkg.com/serverless-apigw-binary/-/serverless-apigw-binary-0.4.4.tgz#f3cffd8365322a2a1d8bde5fd94b306b7a64d4fb"
   integrity sha512-2DJmQTzeXa/+8u9ekReqf7j4gQjBtzQE4MK9nlOnEz4F7MVWCQXYlLPmf2TXSoxxJZzlWvIiNzCTq6vAT9F5FQ==
 
-serverless-domain-manager@3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-3.2.1.tgz#bc847d3f0f25f2957f457873bf5ddc6c56494c9d"
-  integrity sha512-vn/MLRoUDjAlqxDBCgtzqYBfE8ykxyLj3Mjpy18sfkprgfE8TXIwpzz6Pnxl6IEqjyewnhCC/IA2Z8IVLypYZQ==
+serverless-domain-manager@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/serverless-domain-manager/-/serverless-domain-manager-3.2.2.tgz#35a1497b517f5d6946ecb26fa3e587d4c19c3775"
+  integrity sha512-UIKupK/XDhkTyOm7p8GJrkkFa8XSzfeOyuoNScjZIKyA+w5XIxFOMRtmJG1nFqJ/8zq3YMn9J0Hw/I5EvBrPWQ==
   dependencies:
-    "@types/chai-spies" "^1.0.0"
-    "@types/node" "^11.11.3"
     aws-sdk "^2.177.0"
     chalk "^2.4.1"
 
