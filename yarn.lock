@@ -1964,10 +1964,10 @@ serverless-rack@1.0.2:
     lodash "^4.17.11"
     string-argv "^0.1.2"
 
-serverless@1.41.1:
-  version "1.41.1"
-  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.41.1.tgz#c8278058eaa3a3c154b3a21fcc6536c165377a02"
-  integrity sha512-mVB8TSOWmLPvG07twtqPTZ9OToNDATZPY+6XIr63/kjbC9mU+ghrhVudLJRRjew0YewPZh+g1KXy5OyfnWZ5Rg==
+serverless@1.43.0:
+  version "1.43.0"
+  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.43.0.tgz#4677e7b33f00c2e943018562868d6ba9cc4a52fa"
+  integrity sha512-3fQM7vwlUkJZbKpKFFKfDJYNkD1c5UxiAA+JWHY2JiD4Rkn5RVX89ToeR5+rzsT9+ewr2WJ9TqTVM+pd9WjOvA==
   dependencies:
     archiver "^1.1.0"
     async "^1.5.2"
