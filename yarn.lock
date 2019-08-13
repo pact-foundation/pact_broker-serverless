@@ -341,11 +341,6 @@ bl@^1.0.0:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
 
-bluebird@^3.5.3:
-  version "3.5.4"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.4.tgz#d6cc661595de30d5b3af5fcedd3c0b3ef6ec5714"
-  integrity sha512-FG+nFEZChJrbQ9tIccIfZJBz3J7mLrAhxakAbnrJWn8d7aKOC+LWifa0G+p4ZqKp4y13T7juYvdhq9NzKdsrjw==
-
 bluebird@^3.5.5:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
@@ -1311,6 +1306,15 @@ fs-extra@^7.0.1:
   integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   dependencies:
     graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
+fs-extra@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
+  integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
+  dependencies:
+    graceful-fs "^4.2.0"
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
@@ -2844,16 +2848,16 @@ serverless-ignore@0.1.5:
   dependencies:
     ignore "^3.3.8"
 
-serverless-rack@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/serverless-rack/-/serverless-rack-1.0.2.tgz#14c51e4a1fad8169fbfa07317d9bef6342293bf0"
-  integrity sha512-8hRiScN8Srv2uTmNuv0rIwto616+FN5M+sjA9yy07JuEh2u86qVnsjZOJocKfRVF6ehkMxirV+/7T1LJh0psqg==
+serverless-rack@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/serverless-rack/-/serverless-rack-1.0.3.tgz#d86d74c796c849dbc4c2a449d014fc1db820e259"
+  integrity sha512-Mij+iTyA5cBFTVRHOpzo1XGtVtjf0qM+tv5NZvC+OpGC6gVbjigmg/bdDiL0rTG4Y/9K85QD6QWfSW9ufPIY7g==
   dependencies:
-    bluebird "^3.5.3"
+    bluebird "^3.5.5"
     empty-dir "^2.0.0"
-    fs-extra "^7.0.1"
-    lodash "^4.17.11"
-    string-argv "^0.1.2"
+    fs-extra "^8.1.0"
+    lodash "^4.17.15"
+    string-argv "^0.3.0"
 
 serverless@1.49.0:
   version "1.49.0"
@@ -3050,10 +3054,10 @@ static-extend@^0.1.1:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
 
-string-argv@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.1.2.tgz#c5b7bc03fb2b11983ba3a72333dd0559e77e4738"
-  integrity sha512-mBqPGEOMNJKXRo7z0keX0wlAhbBAjilUdPW13nN0PecVryZxdHIeM7TqbsSUA7VYuS00HGC6mojP7DlQzfa9ZA==
+string-argv@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.3.0.tgz#0ea99e7257fea5e97a1bfcdfc19cf12d68e6ec6a"
+  integrity sha512-NGZHq3nkSXVtGZXTBjFru3MNfoZyIzN25T7BmvdgnSC0LCJczAGLLMQLyjywSIaAoqSemgLzBRHOsnrHbt60+Q==
 
 string-width@^1.0.1:
   version "1.0.2"
