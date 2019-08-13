@@ -20,7 +20,7 @@
     "serverless-apigw-binary": "0.4.4",
     "serverless-domain-manager": "3.2.6",
     "serverless-ignore": "0.1.5",
-    "serverless-rack": "1.0.2"
+    "serverless-rack": "1.0.3"
   },
   "dependencies": {
   }
