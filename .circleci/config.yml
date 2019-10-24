@@ -1,8 +1,7 @@
 version: 2.1
 
 defaults: &defaults
-  machine:
-      docker_layer_caching: true
+  machine: true
   environment:
     TERM: xterm
 
