@@ -23,7 +23,7 @@ jobs:
 
   deploy_layer:
     docker:
-    - image: circleci/node:8.16
+    - image: circleci/node:8.17
     environment:
       TERM: xterm
     steps: 
@@ -44,7 +44,7 @@ jobs:
               
   create_domain:
     docker:
-    - image: circleci/node:8.16
+    - image: circleci/node:8.17
     environment:
       TERM: xterm
     steps: 
