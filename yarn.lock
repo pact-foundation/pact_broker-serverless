@@ -2889,10 +2889,10 @@ serverless-rack@1.0.4:
     lodash "^4.17.15"
     string-argv "^0.3.1"
 
-serverless@1.60.0:
-  version "1.60.0"
-  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.60.0.tgz#ff048f9cfd596f50577b2e56ff0095dc974ed6bb"
-  integrity sha512-c46qgTYmKXRMq2pscuOEJlPAp5S32RUAQX0Ti9BTOmv/GRCT3LYT3HfOoqoXGKQ95ROUNre7sXZ6471yCcCbjQ==
+serverless@1.60.1:
+  version "1.60.1"
+  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.60.1.tgz#03ee789ed7d5719b29964b478d0c2e3cc1db2ae1"
+  integrity sha512-uYUS0mM5XQODXKs9u+HlqfP+Cim6OL8nzY395W47xkI0D616K0eXbJojo8pz3lyqDPx4jU+cvG36dwiE8MYORg==
   dependencies:
     "@serverless/cli" "^1.4.0"
     "@serverless/enterprise-plugin" "^3.2.5"
