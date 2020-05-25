@@ -18,7 +18,7 @@
   "devDependencies": {
     "serverless": "1.71.3",
     "serverless-apigw-binary": "0.4.4",
-    "serverless-domain-manager": "4.1.0",
+    "serverless-domain-manager": "4.1.1",
     "serverless-ignore": "0.1.5",
     "serverless-rack": "1.0.5"
   },
