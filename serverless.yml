@@ -21,15 +21,16 @@ provider:
 plugins:
   - serverless-rack
   - serverless-ignore
-  - serverless-domain-manager
+  # - serverless-domain-manager
   - serverless-apigw-binary
+  - serverless-offline
 
 functions:
   api:
     timeout: 30
     handler: rack_adapter.handler
-    layers:
-      - ${env:PG_RUBY_LAYER_ARN}
+    # layers:
+    #   - ${env:PG_RUBY_LAYER_ARN}
     events:
       - http: ANY /
       - http: ANY {proxy+} 
@@ -59,9 +60,9 @@ custom:
       - 'application/json'
       - 'application/hal+json'
       - 'application/xhtml+xml'
-  customDomain:
-    # basePath: pactbroker
-    domainName: ${env:SERVERLESS_DOMAIN_NAME}
-    certificateName: ${env:SERVERLESS_CERTIFICATE_NAME}
-    stage: dev
-    createRoute53Record: true
+  # customDomain:
+  #   # basePath: pactbroker
+  #   domainName: ${env:SERVERLESS_DOMAIN_NAME}
+  #   certificateName: ${env:SERVERLESS_CERTIFICATE_NAME}
+  #   stage: dev
+  #   createRoute53Record: true

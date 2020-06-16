@@ -46,6 +46,7 @@ plugins:
 ## Running with Serverless
 
 1. Run `make downloadpb` which will download the latest version of the `pact_broker` folder from `pact-foundation/pact-broker-docker` _note_ this command will remove the old folder without futher warning.
+   1. MacOS user? : Run `make downloadpbmac` instead
 2. Run `make packagewithpg` to build the pact broker bundle dependencies and postgres dependencies in a docker container, and copy them to your `vendor` and `lib` folders.
    Alternatively you can run `make package` to build the pact broker bundle dependencies. You will need a custom aws layer with the postgres dependencies satisfied to run your function successfully. See the next section
 3. Run `yarn install` or delete the `.lock` file and run `npm install` if you prefer. This will install serverless, along with serverless-rack, serverless-ignore & serverless-domain-manager.
