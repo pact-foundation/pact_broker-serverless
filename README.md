@@ -3,6 +3,8 @@ Serverless Pact Broker
 
 This repository deploys [Pact Broker](https://github.com/pact-foundation/pact_broker) using as an AWS Lambda function along with API Gateway using Serverless.
 
+_Caveat_ - This was an experimental POC and there are several open [issues](https://github.com/pact-foundation/pact_broker-serverless/issues, please take this into consideration. Feedback and contributions are welcome, if this is useful!
+
 ## Prerequisites
 
 * A running postgresql database and the ability to connect to it (see [POSTGRESQL.md][postgres]).
