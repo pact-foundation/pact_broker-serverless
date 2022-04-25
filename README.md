@@ -7,9 +7,9 @@ _Caveat_ - This was an experimental POC and there are several open [issues](http
 
 ## Prerequisites
 
-* A running postgresql database and the ability to connect to it (see [POSTGRESQL.md][postgres]).
+* A running postgresql database and the ability to connect to it (instructions for that are outside of scope).
 * An AWS account
-* A custom domain in route 53 with a certificate
+* A custom domain in route 53 with a certificate (not required if using standard api gateway supplied endpoint)
 
 ## Getting Started
 

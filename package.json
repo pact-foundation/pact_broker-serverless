@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create-domain": "sls create_domain",
-    "deploy": "sls deploy"
+    "deploy": "sls deploy -v"
   },
   "repository": {
     "type": "git",

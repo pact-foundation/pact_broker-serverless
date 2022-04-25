@@ -14,10 +14,10 @@ buildpglayer:
 	cd rubypg_layer && ./build.sh
 
 deploypglayer:
-	cd rubypg_layer && sls deploy -v
+	cd rubypg_layer && npm run deploy -v
 
 logs:
 	awslogs get /aws/lambda/pact-broker-serverless-dev-api --profile=${AWS_PROFILE_NAME} 
 
 deploy:
-	sls deploy -v
+	npm run deploy
