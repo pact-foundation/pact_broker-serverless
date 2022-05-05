@@ -7,9 +7,9 @@ _Caveat_ - This was an experimental POC and there are several open [issues](http
 
 ## Prerequisites
 
-* A running postgresql database and the ability to connect to it (see [POSTGRESQL.md][postgres]).
+* A running postgresql database and the ability to connect to it (instructions for that are outside of scope).
 * An AWS account
-* A custom domain in route 53 with a certificate
+* A custom domain in route 53 with a certificate (not required if using standard api gateway supplied endpoint)
 
 ## Getting Started
 
@@ -48,6 +48,7 @@ plugins:
 ## Running with Serverless
 
 1. Run `make downloadpb` which will download the latest version of the `pact_broker` folder from `pact-foundation/pact-broker-docker` _note_ this command will remove the old folder without futher warning.
+   1. MacOS user? : Run `make downloadpbmac` instead
 2. Run `make packagewithpg` to build the pact broker bundle dependencies and postgres dependencies in a docker container, and copy them to your `vendor` and `lib` folders.
    Alternatively you can run `make package` to build the pact broker bundle dependencies. You will need a custom aws layer with the postgres dependencies satisfied to run your function successfully. See the next section
 3. Run `yarn install` or delete the `.lock` file and run `npm install` if you prefer. This will install serverless, along with serverless-rack, serverless-ignore & serverless-domain-manager.

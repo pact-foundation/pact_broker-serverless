@@ -2,7 +2,7 @@ service: pact-broker-serverless
 
 provider:
   name: aws
-  runtime: ruby2.5
+  runtime: ruby2.7
   region: ${env:AWS_REGION}
   environment:
     # API_GATEWAY_BASE_PATH: ${self:custom.customDomain.basePath}
@@ -11,7 +11,7 @@ provider:
     PACT_BROKER_DATABASE_HOST: ${env:PACT_BROKER_DATABASE_HOST}
     PACT_BROKER_DATABASE_NAME: ${env:PACT_BROKER_DATABASE_NAME}
     PACT_BROKER_LOG_LEVEL: ${env:PACT_BROKER_LOG_LEVEL}
-    PACT_BROKER_BASE_URL: ${env:PACT_BROKER_BASE_URL}
+    # PACT_BROKER_BASE_URL: ${env:PACT_BROKER_BASE_URL}
     RACK_ENV: production
     # PACT_BROKER_BASIC_AUTH_USERNAME: ${env:PACT_BROKER_BASIC_AUTH_USERNAME}
     # PACT_BROKER_BASIC_AUTH_PASSWORD: ${env:PACT_BROKER_BASIC_AUTH_PASSWORD}
@@ -21,18 +21,19 @@ provider:
 plugins:
   - serverless-rack
   - serverless-ignore
-  - serverless-domain-manager
+  # - serverless-domain-manager
   - serverless-apigw-binary
+  - serverless-offline
 
 functions:
   api:
     timeout: 30
     handler: rack_adapter.handler
-    layers:
-      - ${env:PG_RUBY_LAYER_ARN}
+    # layers:
+    #   - ${env:PG_RUBY_LAYER_ARN}
     events:
       - http: ANY /
-      - http: ANY {proxy+} 
+      - http: ANY /{proxy+} 
 
 custom:
   ignore: true
@@ -59,9 +60,9 @@ custom:
       - 'application/json'
       - 'application/hal+json'
       - 'application/xhtml+xml'
-  customDomain:
-    # basePath: pactbroker
-    domainName: ${env:SERVERLESS_DOMAIN_NAME}
-    certificateName: ${env:SERVERLESS_CERTIFICATE_NAME}
-    stage: dev
-    createRoute53Record: true
+  # customDomain:
+  #   # basePath: pactbroker
+  #   domainName: ${env:SERVERLESS_DOMAIN_NAME}
+  #   certificateName: ${env:SERVERLESS_CERTIFICATE_NAME}
+  #   stage: dev
+  #   createRoute53Record: true
