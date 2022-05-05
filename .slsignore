@@ -1,6 +1,5 @@
 rubypg_layer/**
 node_modules/**
-.serverless/**
 .circleci/**
 .bundle/**
 .gitignore
