@@ -23,7 +23,7 @@ jobs:
 
   deploy_layer:
     docker:
-    - image: circleci/node:8.17
+    - image: circleci/node:18
     environment:
       TERM: xterm
     steps: 
@@ -36,7 +36,7 @@ jobs:
             npm install
     - run:
         name: deploy
-        command: yarn run deploy
+        command: npm run deploy
     - persist_to_workspace:
         root: ~/
         paths:
@@ -44,7 +44,7 @@ jobs:
               
   create_domain:
     docker:
-    - image: circleci/node:8.17
+    - image: circleci/node:18
     environment:
       TERM: xterm
     steps: 
@@ -57,7 +57,7 @@ jobs:
             npm install
     - run:
         name: create_domain
-        command: yarn run create-domain 
+        command: npm run create-domain 
     - persist_to_workspace:
         root: ~/
         paths:

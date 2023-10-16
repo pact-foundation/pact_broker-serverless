@@ -2,16 +2,17 @@ service: pact-broker-serverless
 
 provider:
   name: aws
-  runtime: ruby2.7
+  runtime: ruby3.2
   region: ${env:AWS_REGION}
   environment:
     # API_GATEWAY_BASE_PATH: ${self:custom.customDomain.basePath}
-    PACT_BROKER_DATABASE_USERNAME: ${env:PACT_BROKER_DATABASE_USERNAME}
-    PACT_BROKER_DATABASE_PASSWORD: ${env:PACT_BROKER_DATABASE_PASSWORD}
-    PACT_BROKER_DATABASE_HOST: ${env:PACT_BROKER_DATABASE_HOST}
-    PACT_BROKER_DATABASE_NAME: ${env:PACT_BROKER_DATABASE_NAME}
-    PACT_BROKER_LOG_LEVEL: ${env:PACT_BROKER_LOG_LEVEL}
-    # PACT_BROKER_BASE_URL: ${env:PACT_BROKER_BASE_URL}
+    # PACT_BROKER_DATABASE_USERNAME: ${env:PACT_BROKER_DATABASE_USERNAME}
+    # PACT_BROKER_DATABASE_PASSWORD: ${env:PACT_BROKER_DATABASE_PASSWORD}
+    # PACT_BROKER_DATABASE_HOST: ${env:PACT_BROKER_DATABASE_HOST}
+    # PACT_BROKER_DATABASE_NAME: ${env:PACT_BROKER_DATABASE_NAME}
+    # PACT_BROKER_LOG_LEVEL: ${env:PACT_BROKER_LOG_LEVEL}
+    # # PACT_BROKER_BASE_URL: ${env:PACT_BROKER_BASE_URL}
+    PACT_BROKER_DATABASE_URL: sqlite:////tmp/pact_broker.sqlite
     RACK_ENV: production
     # PACT_BROKER_BASIC_AUTH_USERNAME: ${env:PACT_BROKER_BASIC_AUTH_USERNAME}
     # PACT_BROKER_BASIC_AUTH_PASSWORD: ${env:PACT_BROKER_BASIC_AUTH_PASSWORD}
@@ -22,7 +23,7 @@ plugins:
   - serverless-rack
   - serverless-ignore
   # - serverless-domain-manager
-  - serverless-apigw-binary
+  # - serverless-apigw-binary
   - serverless-offline
 
 functions:
@@ -39,6 +40,7 @@ custom:
   ignore: true
   rack:
     configPath: pact_broker/config.ru
+    dockerImage: ruby32-pg-builder:latest
     enableBundler: false
     textMimeTypes:
       - application/hal+json
@@ -51,15 +53,6 @@ custom:
       - text/html;charset=utf-8
       - image/webp
       - image/apng
-  apigwBinary:
-    types:           #list of mime-types
-      - 'image/webp'
-      - 'image/apng'
-      - 'image/jpeg'
-      - 'text/html'
-      - 'application/json'
-      - 'application/hal+json'
-      - 'application/xhtml+xml'
   # customDomain:
   #   # basePath: pactbroker
   #   domainName: ${env:SERVERLESS_DOMAIN_NAME}

@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create-domain": "sls create_domain",
-    "deploy": "sls deploy -v"
+    "deploy": "sls deploy -v",
+    "rack:install": "sls rack install",
+    "rack:serve": "sls rack serve",
+    "sls": "sls"
   },
   "repository": {
     "type": "git",
@@ -16,12 +19,11 @@
   "license": "ISC",
   "homepage": "https://github.com/you54f/pact_broker-serverless#readme",
   "devDependencies": {
-    "serverless": "^2.72.3",
-    "serverless-apigw-binary": "0.4.4",
-    "serverless-domain-manager": "6.0.3",
+    "serverless": "^3.35.2",
+    "serverless-domain-manager": "7.1.2",
     "serverless-ignore": "0.2.1",
-    "serverless-rack": "1.0.7",
-    "serverless-offline": "8.7.0"
+    "serverless-rack": "1.0.8",
+    "serverless-offline": "13.2.0"
   },
   "dependencies": {
   }
