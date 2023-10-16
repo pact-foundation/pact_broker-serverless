@@ -5,8 +5,8 @@ provider:
   region: ${env:AWS_REGION}
   
 layers:
-  pgRuby27:
+  pgRuby32:
     path: layer
-    description: A Layer to fix postgres support in Ruby 2.7 Lambda functions
+    description: A Layer to fix postgres support in Ruby 3.2 Lambda functions
     compatibleRuntimes:
-      - ruby2.7
+      - ruby3.2
