@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/ruby:3.2
+FROM public.ecr.aws/lambda/ruby:3.4
 
 RUN yum install -y amazon-linux-extras \
     && amazon-linux-extras enable postgresql14 \
