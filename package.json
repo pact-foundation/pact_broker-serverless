@@ -20,7 +20,7 @@
   "homepage": "https://github.com/you54f/pact_broker-serverless#readme",
   "devDependencies": {
     "serverless": "^3.35.2",
-    "serverless-domain-manager": "7.1.2",
+    "serverless-domain-manager": "8.0.0",
     "serverless-ignore": "0.2.1",
     "serverless-rack": "1.0.8",
     "serverless-offline": "13.2.0"
